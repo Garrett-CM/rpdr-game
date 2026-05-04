@@ -6,20 +6,26 @@ function App() {
   const [teamName, setTeamName] = useState('')
   const [draggedPlayer, setDraggedPlayer] = useState(null)
 
-  // Generate fantasy players
+  // RuPaul's Drag Race All Stars Season 11 Queens
   const allPlayers = [
-    { id: 1, name: 'Aldric Steelborn', role: 'Knight', power: 92 },
-    { id: 2, name: 'Brianna Shadowend', role: 'Rogue', power: 88 },
-    { id: 3, name: 'Caspian Brightbane', role: 'Mage', power: 95 },
-    { id: 4, name: 'Delilah Duskfire', role: 'Cleric', power: 86 },
-    { id: 5, name: 'Ezra Stormcaller', role: 'Sorcerer', power: 91 },
-    { id: 6, name: 'Fiona Nightwhisper', role: 'Ranger', power: 87 },
-    { id: 7, name: 'Garrett Goldleaf', role: 'Paladin', power: 89 },
-    { id: 8, name: 'Helena Ironfist', role: 'Barbarian', power: 93 },
-    { id: 9, name: 'Ivan Swiftblade', role: 'Rogue', power: 84 },
-    { id: 10, name: 'Jasmine Darkhollow', role: 'Mage', power: 90 },
-    { id: 11, name: 'Kael Frostborn', role: 'Sorcerer', power: 88 },
-    { id: 12, name: 'Luna Starweaver', role: 'Cleric', power: 85 },
+    { id: 1, name: "A'Keria C. Davenport", season: 'Season 11, All Stars 6', placement: '3rd' },
+    { id: 2, name: 'April Carrión', season: 'Season 6', placement: '11th' },
+    { id: 3, name: 'Aura Mayari', season: 'Season 15', placement: '11th' },
+    { id: 4, name: 'Crystal Methyd', season: 'Season 12', placement: 'Runner-up' },
+    { id: 5, name: 'Hershii LiqCour-Jeté', season: 'Season 16', placement: 'TBD' },
+    { id: 6, name: 'Jasmine Kennedie', season: 'Season 14', placement: 'TBD' },
+    { id: 7, name: 'Joey Jay', season: 'Season 13', placement: 'TBD' },
+    { id: 8, name: 'Kennedy Davenport', season: 'Season 7, All Stars 3', placement: '4th' },
+    { id: 9, name: 'Lucky Starzzz', season: 'Season 17', placement: 'TBD' },
+    { id: 10, name: 'Dawn', season: 'Season 16', placement: 'TBD' },
+    { id: 11, name: 'Morphine Love Dion', season: 'Season 16', placement: 'TBD' },
+    { id: 12, name: 'Morgan McMichaels', season: 'Season 2, All Stars 3', placement: '6th' },
+    { id: 13, name: 'Mystique Summers', season: 'Season 2', placement: '10th' },
+    { id: 14, name: 'Salina EsTitties', season: 'Season 15', placement: '6th' },
+    { id: 15, name: 'Sam Star', season: 'Season 17', placement: '3rd' },
+    { id: 16, name: 'Shuga Cain', season: 'Season 11', placement: '7th' },
+    { id: 17, name: 'Silky Nutmeg Ganache', season: 'Season 11, All Stars 6', placement: '3rd' },
+    { id: 18, name: 'Vivacious', season: 'Season 6', placement: '12th' },
   ]
 
   // Get available players (not already in any team)
@@ -126,7 +132,7 @@ function App() {
                         <li key={player.id} className="roster-item">
                           <div className="player-info">
                             <span className="player-name">{player.name}</span>
-                            <span className="player-role">{player.role}</span>
+                            <span className="player-role">{player.season}</span>
                           </div>
                           <button
                             onClick={() => removePlayer(team.id, player.id)}
@@ -167,8 +173,8 @@ function App() {
               >
                 <div className="card-content">
                   <h3>{player.name}</h3>
-                  <p className="role">{player.role}</p>
-                  <div className="power-badge">⚡ {player.power}</div>
+                  <p className="role">{player.season}</p>
+                  <div className="power-badge">🏆 {player.placement}</div>
                 </div>
               </div>
             ))}
