@@ -1,3 +1,13 @@
+/* ========================================
+   RUPAUL'S DRAG RACE FANTASY LEAGUE - MAIN STYLES
+   New Color Palette:
+     Vibrant Pink:   #ff5ed5
+     Teal Accent:    #59c9c5
+     Dark Gray:      #4d4249
+     Gold Highlight: #d1ac60
+     Bold Magenta:   #e5007c
+   ======================================== */
+
 /* App Container */
 .app-container {
   min-height: 100vh;
@@ -5,15 +15,15 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #4d4249 0%, #2a2329 100%);
   color: #fff;
 }
 
 /* Sections */
 .section {
   width: 100%;
-  background: rgba(30, 27, 75, 0.5);
-  border: 2px solid #8b5cf6;
+  background: rgba(77, 66, 73, 0.6);
+  border: 2px solid #ff5ed5;
   border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(10px);
@@ -23,7 +33,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #fbbf24;
+  color: #d1ac60;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -44,9 +54,9 @@
 .team-input {
   flex: 1;
   padding: 0.75rem;
-  border: 2px solid #6d28d9;
+  border: 2px solid #e5007c;
   border-radius: 8px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(77, 66, 73, 0.8);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -54,16 +64,16 @@
 
 .team-input:focus {
   outline: none;
-  border-color: #fbbf24;
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+  border-color: #d1ac60;
+  box-shadow: 0 0 0 3px rgba(209, 172, 96, 0.2);
 }
 
 .btn-create {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background: linear-gradient(135deg, #e5007c, #ff5ed5);
   border: none;
   border-radius: 8px;
-  color: #000;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -71,13 +81,14 @@
 
 .btn-create:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 8px 16px rgba(229, 0, 124, 0.4);
+  background: linear-gradient(135deg, #ff5ed5, #e5007c);
 }
 
 /* Teams List Section */
 .teams-list {
-  background: rgba(30, 27, 75, 0.5);
-  border: 2px solid #8b5cf6;
+  background: rgba(77, 66, 73, 0.5);
+  border: 2px solid #59c9c5;
   border-radius: 12px;
   padding: 2rem;
   backdrop-filter: blur(10px);
@@ -108,16 +119,16 @@
 }
 
 .team-card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid #6d28d9;
+  background: rgba(77, 66, 73, 0.7);
+  border: 1px solid #e5007c;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .team-card:hover {
-  border-color: #fbbf24;
-  box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+  border-color: #d1ac60;
+  box-shadow: 0 0 12px rgba(209, 172, 96, 0.3);
 }
 
 .team-header {
@@ -125,21 +136,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
-  background: rgba(107, 44, 217, 0.2);
-  border-bottom: 1px solid #6d28d9;
+  background: rgba(229, 0, 124, 0.2);
+  border-bottom: 1px solid #e5007c;
 }
 
 .team-header h3 {
   font-size: 1rem;
   font-weight: bold;
-  color: #fbbf24;
+  color: #ff5ed5;
   margin: 0;
 }
 
 .btn-delete {
-  background: #dc2626;
+  background: #ff5ed5;
   border: none;
-  color: #fff;
+  color: #4d4249;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -152,19 +163,20 @@
 }
 
 .btn-delete:hover {
-  background: #b91c1c;
+  background: #e5007c;
+  color: #fff;
   transform: scale(1.1);
 }
 
 .team-drop-zone {
   padding: 0.75rem;
   min-height: 60px;
-  background: rgba(15, 23, 42, 0.3);
-  border-top: 1px solid #6d28d9;
+  background: rgba(77, 66, 73, 0.4);
+  border-top: 1px solid #59c9c5;
 }
 
 .drop-hint {
-  color: #9ca3af;
+  color: #59c9c5;
   text-align: center;
   padding: 0.5rem;
   font-style: italic;
@@ -186,8 +198,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background: rgba(107, 44, 217, 0.1);
-  border: 1px solid rgba(107, 44, 217, 0.3);
+  background: rgba(89, 201, 197, 0.1);
+  border: 1px solid rgba(89, 201, 197, 0.3);
   border-radius: 4px;
   font-size: 0.8rem;
 }
@@ -201,43 +213,45 @@
 
 .player-name {
   font-weight: 600;
-  color: #fbbf24;
+  color: #d1ac60;
   font-size: 0.8rem;
 }
 
 .player-role {
   font-size: 0.7rem;
-  color: #9ca3af;
+  color: #59c9c5;
 }
 
 .btn-remove {
   padding: 0.3rem 0.6rem;
-  background: #6b7280;
+  background: #ff5ed5;
   border: none;
-  color: #fff;
+  color: #4d4249;
   border-radius: 3px;
   font-size: 0.7rem;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-remove:hover {
-  background: #4b5563;
+  background: #e5007c;
+  color: #fff;
 }
 
 .team-footer {
   padding: 0.5rem 0.75rem;
-  background: rgba(107, 44, 217, 0.1);
-  border-top: 1px solid #6d28d9;
+  background: rgba(229, 0, 124, 0.1);
+  border-top: 1px solid #59c9c5;
   font-size: 0.8rem;
-  color: #cbd5e1;
+  color: #ff5ed5;
   text-align: center;
 }
 
 .empty-state {
   padding: 2rem;
   text-align: center;
-  color: #9ca3af;
+  color: #59c9c5;
   font-style: italic;
 }
 
@@ -256,8 +270,8 @@
 }
 
 .player-card {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(107, 44, 217, 0.1));
-  border: 2px solid #8b5cf6;
+  background: linear-gradient(135deg, rgba(255, 94, 213, 0.2), rgba(229, 0, 124, 0.1));
+  border: 2px solid #ff5ed5;
   border-radius: 12px;
   padding: 0.8rem;
   cursor: grab;
@@ -269,15 +283,16 @@
 
 .player-card:hover {
   transform: scale(1.8);
-  border-color: #fbbf24;
-  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3);
+  border-color: #d1ac60;
+  box-shadow: 0 20px 40px rgba(209, 172, 96, 0.4);
   z-index: 100;
   padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 94, 213, 0.4), rgba(229, 0, 124, 0.2));
 }
 
 .player-card:active {
   cursor: grabbing;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .card-content {
@@ -288,28 +303,30 @@
 .card-content h3 {
   font-size: 0.85rem;
   font-weight: bold;
-  color: #fbbf24;
+  color: #d1ac60;
   margin: 0 0 0.4rem 0;
 }
 
 .player-card:hover .card-content h3 {
   font-size: 1.1rem;
+  color: #ff5ed5;
 }
 
 .role {
-  color: #9ca3af;
+  color: #59c9c5;
   font-size: 0.75rem;
   margin: 0 0 0.6rem 0;
 }
 
 .player-card:hover .role {
   font-size: 0.9rem;
+  color: #fff;
 }
 
 .power-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #000;
+  background: linear-gradient(135deg, #e5007c, #ff5ed5);
+  color: #fff;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-weight: bold;
@@ -319,6 +336,7 @@
 .player-card:hover .power-badge {
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #d1ac60, #e5007c);
 }
 
 /* Responsive Design */
