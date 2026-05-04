@@ -77,28 +77,28 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Top Section */}
-      <div className="top-section">
-        {/* Left: Team Creator */}
-        <div className="team-creator">
-          <h2>Create Team</h2>
-          <div className="input-group">
-            <input
-              type="text"
-              value={teamName}
-              onChange={(e) => setTeamName(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && createTeam()}
-              placeholder="Enter team name..."
-              className="team-input"
-            />
-            <button onClick={createTeam} className="btn-create">
-              Add Team
-            </button>
-          </div>
+      {/* Section 1: Team Creation */}
+      <div className="section section-creator">
+        <h2>Create Team</h2>
+        <div className="input-group">
+          <input
+            type="text"
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && createTeam()}
+            placeholder="Enter team name..."
+            className="team-input"
+          />
+          <button onClick={createTeam} className="btn-create">
+            Add Team
+          </button>
         </div>
+      </div>
 
-        {/* Right: Teams List */}
-        <div className="teams-list">
+      {/* Section 2 & 3: Teams and Players Side by Side */}
+      <div className="sections-row">
+        {/* Left: Teams List */}
+        <div className="section section-teams">
           <h2>Teams ({teams.length})</h2>
           <div className="teams-grid">
             {teams.map(team => (
@@ -153,33 +153,33 @@ function App() {
             </div>
           )}
         </div>
-      </div>
 
-      {/* Bottom Section: Player Cards */}
-      <div className="bottom-section">
-        <h2>Available Players</h2>
-        <div className="players-grid">
-          {availablePlayers.map(player => (
-            <div
-              key={player.id}
-              draggable
-              onDragStart={() => handleDragStart(player)}
-              className="player-card"
-            >
-              <div className="card-content">
-                <h3>{player.name}</h3>
-                <p className="role">{player.role}</p>
-                <div className="power-badge">⚡ {player.power}</div>
+        {/* Right: Player Cards */}
+        <div className="section section-players">
+          <h2>Available Players</h2>
+          <div className="players-grid">
+            {availablePlayers.map(player => (
+              <div
+                key={player.id}
+                draggable
+                onDragStart={() => handleDragStart(player)}
+                className="player-card"
+              >
+                <div className="card-content">
+                  <h3>{player.name}</h3>
+                  <p className="role">{player.role}</p>
+                  <div className="power-badge">⚡ {player.power}</div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {availablePlayers.length === 0 && (
-          <div className="empty-state">
-            <p>All players have been drafted!</p>
+            ))}
           </div>
-        )}
+
+          {availablePlayers.length === 0 && (
+            <div className="empty-state">
+              <p>All players have been drafted!</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
