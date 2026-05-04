@@ -1,0 +1,334 @@
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  color: #fff;
+}
+
+/* Top Section (50/50 split) */
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-height: 400px;
+}
+
+/* Bottom Section (full width) */
+.bottom-section {
+  width: 100%;
+}
+
+.bottom-section h2,
+.team-creator h2,
+.teams-list h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Team Creator Section */
+.team-creator {
+  background: rgba(30, 27, 75, 0.5);
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.team-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #6d28d9;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.team-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.btn-create {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(251, 191, 36, 0.3);
+}
+
+/* Teams List Section */
+.teams-list {
+  background: rgba(30, 27, 75, 0.5);
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.teams-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.team-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #6d28d9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(107, 44, 217, 0.2);
+  border-bottom: 1px solid #6d28d9;
+}
+
+.team-header h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.btn-delete {
+  background: #dc2626;
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+  transform: scale(1.1);
+}
+
+.team-drop-zone {
+  padding: 1rem;
+  min-height: 80px;
+  background: rgba(15, 23, 42, 0.3);
+  border-top: 1px solid #6d28d9;
+}
+
+.drop-hint {
+  color: #9ca3af;
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+}
+
+.roster-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.roster-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(107, 44, 217, 0.1);
+  border: 1px solid rgba(107, 44, 217, 0.3);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.player-name {
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.player-role {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.btn-remove {
+  padding: 0.4rem 0.8rem;
+  background: #6b7280;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-remove:hover {
+  background: #4b5563;
+}
+
+.team-footer {
+  padding: 0.75rem 1rem;
+  background: rgba(107, 44, 217, 0.1);
+  border-top: 1px solid #6d28d9;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Player Cards Section */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.player-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(107, 44, 217, 0.1));
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: grab;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.player-card:hover {
+  transform: translateY(-8px);
+  border-color: #fbbf24;
+  box-shadow: 0 12px 24px rgba(251, 191, 36, 0.2);
+}
+
+.player-card:active {
+  cursor: grabbing;
+  opacity: 0.7;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin: 0 0 0.5rem 0;
+}
+
+.role {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.power-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .top-section {
+    grid-template-columns: 1fr;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .team-creator,
+  .teams-list {
+    padding: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .btn-create {
+    width: 100%;
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .player-card {
+    padding: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+}
