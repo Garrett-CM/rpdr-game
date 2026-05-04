@@ -6,26 +6,134 @@ function App() {
   const [teamName, setTeamName] = useState('')
   const [draggedPlayer, setDraggedPlayer] = useState(null)
 
-  // RuPaul's Drag Race All Stars Season 11 Queens
+  // RuPaul's Drag Race All Stars Season 11 Queens with Official Headshots
   const allPlayers = [
-    { id: 1, name: "A'Keria C. Davenport", season: 'Season 11, All Stars 6', placement: '3rd' },
-    { id: 2, name: 'April Carrión', season: 'Season 6', placement: '11th' },
-    { id: 3, name: 'Aura Mayari', season: 'Season 15', placement: '11th' },
-    { id: 4, name: 'Crystal Methyd', season: 'Season 12', placement: 'Runner-up' },
-    { id: 5, name: 'Hershii LiqCour-Jeté', season: 'Season 16', placement: 'TBD' },
-    { id: 6, name: 'Jasmine Kennedie', season: 'Season 14', placement: 'TBD' },
-    { id: 7, name: 'Joey Jay', season: 'Season 13', placement: 'TBD' },
-    { id: 8, name: 'Kennedy Davenport', season: 'Season 7, All Stars 3', placement: '4th' },
-    { id: 9, name: 'Lucky Starzzz', season: 'Season 17', placement: 'TBD' },
-    { id: 10, name: 'Dawn', season: 'Season 16', placement: 'TBD' },
-    { id: 11, name: 'Morphine Love Dion', season: 'Season 16', placement: 'TBD' },
-    { id: 12, name: 'Morgan McMichaels', season: 'Season 2, All Stars 3', placement: '6th' },
-    { id: 13, name: 'Mystique Summers', season: 'Season 2', placement: '10th' },
-    { id: 14, name: 'Salina EsTitties', season: 'Season 15', placement: '6th' },
-    { id: 15, name: 'Sam Star', season: 'Season 17', placement: '3rd' },
-    { id: 16, name: 'Shuga Cain', season: 'Season 11', placement: '7th' },
-    { id: 17, name: 'Silky Nutmeg Ganache', season: 'Season 11, All Stars 6', placement: '3rd' },
-    { id: 18, name: 'Vivacious', season: 'Season 6', placement: '12th' },
+    { 
+      id: 1, 
+      name: "A'Keria C. Davenport", 
+      season: 'Season 11, All Stars 6', 
+      placement: '3rd',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/e/e1/Akeria_Davenport.png'
+    },
+    { 
+      id: 2, 
+      name: 'April Carrión', 
+      season: 'Season 6', 
+      placement: '11th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/8/87/April_Carrion.png'
+    },
+    { 
+      id: 3, 
+      name: 'Aura Mayari', 
+      season: 'Season 15', 
+      placement: '11th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/5/5e/Aura_Mayari.png'
+    },
+    { 
+      id: 4, 
+      name: 'Crystal Methyd', 
+      season: 'Season 12', 
+      placement: 'Runner-up',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/0/0c/Crystal_Methyd.png'
+    },
+    { 
+      id: 5, 
+      name: 'Hershii LiqCour-Jeté', 
+      season: 'Season 16', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/c/cc/Hershii_LiqCour-Jete.png'
+    },
+    { 
+      id: 6, 
+      name: 'Jasmine Kennedie', 
+      season: 'Season 14', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/f/f7/Jasmine_Kennedie.png'
+    },
+    { 
+      id: 7, 
+      name: 'Joey Jay', 
+      season: 'Season 13', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/e/e9/Joey_Jay.png'
+    },
+    { 
+      id: 8, 
+      name: 'Kennedy Davenport', 
+      season: 'Season 7, All Stars 3', 
+      placement: '4th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/1/1f/Kennedy_Davenport.png'
+    },
+    { 
+      id: 9, 
+      name: 'Lucky Starzzz', 
+      season: 'Season 17', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/2/2e/Lucky_Starzzz.png'
+    },
+    { 
+      id: 10, 
+      name: 'Dawn', 
+      season: 'Season 16', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/7/78/Dawn.png'
+    },
+    { 
+      id: 11, 
+      name: 'Morphine Love Dion', 
+      season: 'Season 16', 
+      placement: 'TBD',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/9/91/Morphine_Love_Dion.png'
+    },
+    { 
+      id: 12, 
+      name: 'Morgan McMichaels', 
+      season: 'Season 2, All Stars 3', 
+      placement: '6th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/4/4a/Morgan_McMichaels.png'
+    },
+    { 
+      id: 13, 
+      name: 'Mystique Summers', 
+      season: 'Season 2', 
+      placement: '10th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/0/0f/Mystique_Summers.png'
+    },
+    { 
+      id: 14, 
+      name: 'Salina EsTitties', 
+      season: 'Season 15', 
+      placement: '6th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/6/66/Salina_EsTitties.png'
+    },
+    { 
+      id: 15, 
+      name: 'Sam Star', 
+      season: 'Season 17', 
+      placement: '3rd',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/3/34/Sam_Star.png'
+    },
+    { 
+      id: 16, 
+      name: 'Shuga Cain', 
+      season: 'Season 11', 
+      placement: '7th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/a/ac/Shuga_Cain.png'
+    },
+    { 
+      id: 17, 
+      name: 'Silky Nutmeg Ganache', 
+      season: 'Season 11, All Stars 6', 
+      placement: '3rd',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/5/51/Silky_Nutmeg_Ganache.png'
+    },
+    { 
+      id: 18, 
+      name: 'Vivacious', 
+      season: 'Season 6', 
+      placement: '12th',
+      headshot: 'https://static.wikia.nocookie.net/logosandcharacters/images/7/7c/Vivacious.png'
+    },
   ]
 
   // Get available players (not already in any team)
@@ -171,6 +279,14 @@ function App() {
                 onDragStart={() => handleDragStart(player)}
                 className="player-card"
               >
+                <img 
+                  src={player.headshot} 
+                  alt={player.name}
+                  className="player-headshot"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
                 <div className="card-content">
                   <h3>{player.name}</h3>
                   <p className="role">{player.season}</p>
