@@ -235,22 +235,32 @@ function App() {
                   {team.roster.length === 0 ? (
                     <p className="drop-hint">Drag players here</p>
                   ) : (
-                    <ul className="roster-list">
+                    <div className="roster-cards">
                       {team.roster.map(player => (
-                        <li key={player.id} className="roster-item">
-                          <div className="player-info">
-                            <span className="player-name">{player.name}</span>
-                            <span className="player-role">{player.season}</span>
+                        <div key={player.id} className="team-player-card">
+                          <img 
+                            src={player.headshot} 
+                            alt={player.name}
+                            className="team-player-headshot"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                          <div className="team-card-content">
+                            <h4>{player.name}</h4>
+                            <p className="team-card-role">{player.season}</p>
+                            <div className="team-power-badge">🏆 {player.placement}</div>
                           </div>
                           <button
                             onClick={() => removePlayer(team.id, player.id)}
-                            className="btn-remove"
+                            className="btn-remove-player"
+                            title="Remove player"
                           >
-                            Remove
+                            ×
                           </button>
-                        </li>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   )}
                 </div>
 
