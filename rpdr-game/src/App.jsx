@@ -5,6 +5,8 @@ function App() {
   const [teams, setTeams] = useState([])
   const [teamName, setTeamName] = useState('')
   const [draggedPlayer, setDraggedPlayer] = useState(null)
+  const [isCreatorMinimized, setIsCreatorMinimized] = useState(false)
+  const [isPlayersMinimized, setIsPlayersMinimized] = useState(false)
 
   // RuPaul's Drag Race All Stars Season 11 Queens with Official Headshots
   const allPlayers = [
@@ -193,20 +195,31 @@ function App() {
     <div className="app-container">
       {/* Section 1: Team Creation */}
       <div className="section section-creator">
-        <h2>Create Team</h2>
-        <div className="input-group">
-          <input
-            type="text"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && createTeam()}
-            placeholder="Enter team name..."
-            className="team-input"
-          />
-          <button onClick={createTeam} className="btn-create">
-            Add Team
+        <div className="section-header">
+          <h2>Create Team</h2>
+          <button
+            onClick={() => setIsCreatorMinimized(!isCreatorMinimized)}
+            className="btn-minimize"
+            title={isCreatorMinimized ? "Expand" : "Minimize"}
+          >
+            {isCreatorMinimized ? '▼' : '▲'}
           </button>
         </div>
+        {!isCreatorMinimized && (
+          <div className="input-group">
+            <input
+              type="text"
+              value={teamName}
+              onChange={(e) => setTeamName(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && createTeam()}
+              placeholder="Enter team name..."
+              className="team-input"
+            />
+            <button onClick={createTeam} className="btn-create">
+              Add Team
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Section 2 & 3: Teams and Players Side by Side */}
@@ -280,31 +293,42 @@ function App() {
 
         {/* Right: Player Cards */}
         <div className="section section-players">
-          <h2>Available Players</h2>
-          <div className="players-grid">
-            {availablePlayers.map(player => (
-              <div
-                key={player.id}
-                draggable
-                onDragStart={() => handleDragStart(player)}
-                className="player-card"
-              >
-                <img 
-                  src={player.headshot} 
-                  alt={player.name}
-                  className="player-headshot"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
-                />
-                <div className="card-content">
-                  <h3>{player.name}</h3>
-                  <p className="role">{player.season}</p>
-                  <div className="power-badge">🏆 {player.placement}</div>
-                </div>
-              </div>
-            ))}
+          <div className="section-header">
+            <h2>Available Players</h2>
+            <button
+              onClick={() => setIsPlayersMinimized(!isPlayersMinimized)}
+              className="btn-minimize"
+              title={isPlayersMinimized ? "Expand" : "Minimize"}
+            >
+              {isPlayersMinimized ? '▼' : '▲'}
+            </button>
           </div>
+          {!isPlayersMinimized && (
+            <div className="players-grid">
+              {availablePlayers.map(player => (
+                <div
+                  key={player.id}
+                  draggable
+                  onDragStart={() => handleDragStart(player)}
+                  className="player-card"
+                >
+                  <img 
+                    src={player.headshot} 
+                    alt={player.name}
+                    className="player-headshot"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="card-content">
+                    <h3>{player.name}</h3>
+                    <p className="role">{player.season}</p>
+                    <div className="power-badge">🏆 {player.placement}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
           {availablePlayers.length === 0 && (
             <div className="empty-state">
