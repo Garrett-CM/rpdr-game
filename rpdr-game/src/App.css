@@ -134,6 +134,17 @@
   grid-template-columns: 1fr 2fr;
   gap: 5rem;
   width: 100%;
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Expand teams section when players section is minimized */
+.section-players:has(.empty-state:only-child) ~ .section-teams,
+.sections-row:has(.section-players:has(.empty-state:only-child)) .section-teams {
+  grid-column: 1 / -1;
+}
+
+.sections-row:has(.section-players:has(.empty-state:only-child)) {
+  grid-template-columns: 1fr;
 }
 
 /* Section 2: Teams List */
@@ -395,6 +406,15 @@
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+}
+
+/* When players section is minimized, expand teams to full width */
+.sections-row:has(.section-players.minimized) {
+  grid-template-columns: 1fr;
+}
+
+.sections-row:has(.section-players.minimized) .section-teams {
+  grid-column: 1 / -1;
 }
 
 .section-players:has(.empty-state:only-child) {

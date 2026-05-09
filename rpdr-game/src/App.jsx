@@ -292,7 +292,7 @@ function App() {
         </div>
 
         {/* Right: Player Cards */}
-        <div className="section section-players">
+        <div className={`section section-players ${isPlayersMinimized ? 'minimized' : ''}`}>
           <div className="section-header">
             <h2>Available Players</h2>
             <button
