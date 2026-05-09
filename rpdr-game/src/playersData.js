@@ -33,7 +33,7 @@ export const allPlayersData = [
     name: 'Hershii LiqCour-Jeté', 
     season: 'Season 16', 
     placement: 'TBD',
-    headshot: 'assets/HershiiLiqCour-Jeté.webp'
+    headshot: 'assets/HershiiLiqCour-Jet.webp'
   },
   { 
     id: 6, 
