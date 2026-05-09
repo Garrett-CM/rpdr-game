@@ -1,4 +1,5 @@
-// RuPaul's Drag Race All Stars Season 11 Queens with Official Headshots
+// RuPaul's Drag Race All Stars Season 11 Queens
+//TODO: extend the data to include more players and seasons
 export const allPlayersData = [
   { 
     id: 1, 
