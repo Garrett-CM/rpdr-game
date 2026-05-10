@@ -10,16 +10,15 @@ A fantasy league platform for RuPaul's Drag Race All Stars and regular seasons. 
 
 ## 🎭 About
 
-RuPaul's Drag Race All Stars Fantasy League lets fans engage with their favorite seasons in a whole new way. Draft queens, predict eliminations, and compete in leagues with friends—all with comprehensive queen data at your fingertips.
+RuPaul's Drag Race All Stars Fantasy League lets you engage with the show instead of just watching. Draft queens and compete in leagues with friends. All with comprehensive queen data at your fingertips, locally sourced.
 
 ## ✨ Current Features
 
 - **Fantasy League System**: Create leagues and invite friends to compete
 - **Basic Queen Selection**: Draft and manage your fantasy team
-- **Season Support**: Limited support for select All Stars and regular seasons
-- **User Accounts**: Register, login, and track your league standings
+- **Season Support**: Limited support for select, 1, All Stars and regular seasons
 
-## 🚀 Features Coming Soon
+## 🚀 Features Coming Soon... (maybe)
 
 ### 📱 Mobile Compatibility
 Full responsive design and dedicated mobile app support for on-the-go league management.
@@ -45,17 +44,17 @@ Full responsive design and dedicated mobile app support for on-the-go league man
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Your Framework - e.g., React, Vue, etc.]
-- **Backend**: [Your Backend - e.g., Node.js, Python, etc.]
-- **Database**: [Your Database - e.g., PostgreSQL, MongoDB, etc.]
-- **Hosting**: [Your Hosting Provider]
+- **Frontend**: [React]
+- **Backend**: [TBD]
+- **Database**: [TBD]
+- **Hosting**: [Netlify]
 
 ## 📋 Getting Started
 
 ### Prerequisites
 - Node.js 14+ (or your requirement)
 - npm or yarn
-- [Other prerequisites]
+- React
 
 ### Installation
 
@@ -79,8 +78,6 @@ The application will be available at `http://localhost:3000`
 
 ## 📖 Usage
 
-1. **Create an Account**: Sign up with your email
-2. **Create or Join a League**: Start a new league or join with an invite link
 3. **Draft Your Queens**: Select your fantasy team from available queens
 4. **Track Scores**: Watch your team's performance as episodes air
 5. **Compete**: Compare standings with friends and climb the leaderboard
